@@ -21,7 +21,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title || amount) return;
+    if (!title || !amount) return;
 
     await onAddTransaction(title, parseFloat(amount), type);
     setTitle("");
