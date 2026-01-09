@@ -93,7 +93,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center pointer-events-none gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+          className="w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
         >
           {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin" />
