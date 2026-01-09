@@ -58,7 +58,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
               onChange={(e) => setAmount(e.target.value)}
               className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent placeholder-zinc-600 transition-all"
               placeholder="0.00"
-              min="0"
+              min="0.01"
               step="1"
               required
             />
