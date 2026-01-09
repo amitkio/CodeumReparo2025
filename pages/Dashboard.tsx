@@ -89,7 +89,7 @@ const Dashboard: React.FC<DashboardProps> = ({ session }) => {
           </div>
 
           {/* List Section */}
-          <div className="lg:col-span-2 -ml-20">
+          <div className="lg:col-span-2">
             {loading ? (
               <div className="bg-zinc-800 rounded-xl p-12 flex justify-center border border-zinc-700/50">
                 <div className="animate-pulse flex flex-col items-center">
