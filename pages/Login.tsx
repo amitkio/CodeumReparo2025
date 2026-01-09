@@ -27,7 +27,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center bg-zinc-900 px-4">
-      <div className="max-w-md w-full absolute -top-40 bg-zinc-800 p-8 rounded-2xl shadow-xl border border-zinc-700/50">
+      <div className="max-w-md w-full absolute bg-zinc-800 p-8 rounded-2xl shadow-xl border border-zinc-700/50">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center p-3 bg-teal-600 rounded-xl mb-4">
             <Wallet className="h-8 w-8 text-white" />
