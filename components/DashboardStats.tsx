@@ -9,7 +9,7 @@ interface DashboardStatsProps {
 const DashboardStats: React.FC<DashboardStatsProps> = ({ transactions }) => {
   const income = transactions
     .filter((t) => t.type === "income")
-    .reduce((acc, t) => acc + Number(t.amount / 10), 0);
+    .reduce((acc, t) => acc + Number(t.amount), 0);
 
   const expense = transactions
     .filter((t) => t.type === "expense")
