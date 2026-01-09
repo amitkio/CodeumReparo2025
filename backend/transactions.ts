@@ -37,7 +37,7 @@ export const deleteTransaction = async (id: string) => {
   const { error } = await supabase
     .from('transactions')
     .delete()
-    .eq('id', 'id');
+    .eq('id', id);
 
   return { error };
 };
