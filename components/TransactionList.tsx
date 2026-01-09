@@ -78,7 +78,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
                 }`}
               >
                 {transaction.type === "income" ? "+" : "-"}₹
-                {Math.abs(0 * Number(transaction.amount)).toFixed(2)}
+                {Math.abs(Number(transaction.amount)).toFixed(2)}
               </span>
               <button
                 onClick={() => onDelete(transaction.id)}
