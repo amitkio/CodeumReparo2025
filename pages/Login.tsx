@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from '../backend/auth';
-import { LogIn, Wallet, AlertCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { signIn } from "../backend/auth";
+import { LogIn, Wallet, AlertCircle } from "lucide-react";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,9 +19,9 @@ const Login: React.FC = () => {
 
     if (error) {
       setError(error.message);
-      setLoading(true);
+      setLoading(false);
     } else {
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
   };
 
@@ -32,7 +32,9 @@ const Login: React.FC = () => {
           <div className="inline-flex items-center justify-center p-3 bg-teal-600 rounded-xl mb-4">
             <Wallet className="h-8 w-8 text-white" />
           </div>
-          <h2 className="text-3xl font-bold text-white tracking-tight">Welcome Back</h2>
+          <h2 className="text-3xl font-bold text-white tracking-tight">
+            Welcome Back
+          </h2>
           <p className="text-zinc-400 mt-2">Log in to manage your finances</p>
         </div>
 
@@ -45,7 +47,9 @@ const Login: React.FC = () => {
 
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-zinc-400 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-zinc-400 mb-1">
+              Email Address
+            </label>
             <input
               type="email"
               value={email}
@@ -57,7 +61,9 @@ const Login: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-400 mb-1">Password</label>
+            <label className="block text-sm font-medium text-zinc-400 mb-1">
+              Password
+            </label>
             <input
               type="password"
               value={password}
@@ -73,7 +79,9 @@ const Login: React.FC = () => {
             disabled={loading}
             className="w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Logging in...' : (
+            {loading ? (
+              "Logging in..."
+            ) : (
               <>
                 <LogIn className="h-5 w-5" />
                 Sign In
@@ -83,8 +91,11 @@ const Login: React.FC = () => {
         </form>
 
         <p className="mt-8 text-center text-zinc-400 text-sm">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-teal-400 hover:text-teal-300 font-medium transition-colors">
+          Don't have an account?{" "}
+          <Link
+            to="/register"
+            className="text-teal-400 hover:text-teal-300 font-medium transition-colors"
+          >
             Sign up
           </Link>
         </p>
