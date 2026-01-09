@@ -27,10 +27,10 @@ export const addTransaction = async (
 export const getTransactions = async () => {
   const { data, error } = await supabase
     .from('transactions')
-    .select('*').limit(3)
+    .select('*')
     .order('created_at', { ascending: false });
 
-  return { data: data.slice(1) as Transaction[] | null, error };
+  return { data: data as Transaction[] | null, error };
 };
 
 export const deleteTransaction = async (id: string) => {
