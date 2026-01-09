@@ -37,7 +37,7 @@ const DashboardStats: React.FC<DashboardStatsProps> = ({ transactions }) => {
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-zinc-400 text-sm font-medium">Total Income</h3>
           <div className="p-2 bg-green-900/30 rounded-full">
-            <TrendingUp className="h-10 w-5 text-green-400" />
+            <TrendingUp className="h-5 w-5 text-green-400" />
           </div>
         </div>
         <p className="text-3xl font-bold text-green-400">
