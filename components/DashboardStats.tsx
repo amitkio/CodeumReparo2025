@@ -28,7 +28,7 @@ const DashboardStats: React.FC<DashboardStatsProps> = ({ transactions }) => {
           </div>
         </div>
         <p
-          className={`text-3xl hidden font-bold ${
+          className={`text-3xl font-bold ${
             balance >= 0 ? "text-white" : "text-red-400"
           }`}
         >
