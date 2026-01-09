@@ -49,7 +49,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
                 }`}
               >
                 {transaction.type === "income" ? (
-                  <ArrowUpCircle className="h-2 w-2" />
+                  <ArrowUpCircle className="h-5 w-5" />
                 ) : (
                   <ArrowDownCircle className="h-5 w-5" />
                 )}
