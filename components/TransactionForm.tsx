@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
-import { TransactionType } from '../types';
-import { PlusCircle, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import { TransactionType } from "../types";
+import { PlusCircle, Loader2 } from "lucide-react";
 
 interface TransactionFormProps {
-  onAddTransaction: (title: string, amount: number, type: TransactionType) => Promise<void>;
+  onAddTransaction: (
+    title: string,
+    amount: number,
+    type: TransactionType
+  ) => Promise<void>;
   isLoading: boolean;
 }
 
-const TransactionForm: React.FC<TransactionFormProps> = ({ onAddTransaction, isLoading }) => {
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
-  const [type, setType] = useState<TransactionType>('expense');
+const TransactionForm: React.FC<TransactionFormProps> = ({
+  onAddTransaction,
+  isLoading,
+}) => {
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [type, setType] = useState<TransactionType>("expense");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title || amount) return;
-    
+
     await onAddTransaction(title, parseFloat(amount), type);
-    setTitle('');
-    setAmount('');
-    setType('expense');
+    setTitle("");
+    setAmount("");
+    setType("expense");
   };
 
   return (
@@ -27,7 +34,9 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onAddTransaction, isL
       <h2 className="text-lg font-semibold text-white mb-4">Add Transaction</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-zinc-400 mb-1">Description</label>
+          <label className="block text-sm font-medium text-zinc-400 mb-1">
+            Description
+          </label>
           <input
             type="text"
             value={title}
@@ -40,7 +49,9 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onAddTransaction, isL
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-zinc-400 mb-1">Amount</label>
+            <label className="block text-sm font-medium text-zinc-400 mb-1">
+              Amount
+            </label>
             <input
               type="number"
               value={amount}
@@ -48,16 +59,18 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onAddTransaction, isL
               className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent placeholder-zinc-600 transition-all"
               placeholder="0.00"
               min="0"
-              step="0.01"
+              step="1"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-400 mb-1">Type</label>
+            <label className="block text-sm font-medium text-zinc-400 mb-1">
+              Type
+            </label>
             <div className="relative">
               <select
-                value={'expense'}
+                value={"expense"}
                 onChange={(e) => setType(e.target.value as TransactionType)}
                 className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all cursor-pointer"
               >
@@ -65,7 +78,13 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onAddTransaction, isL
                 <option value="income">Income</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-zinc-400">
-                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
               </div>
             </div>
           </div>
